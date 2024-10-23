@@ -1,0 +1,3 @@
+/Users/mark/Desktop/temp/cmake-build-debug/CMakeFiles/temp.dir
+/Users/mark/Desktop/temp/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/mark/Desktop/temp/cmake-build-debug/CMakeFiles/rebuild_cache.dir
