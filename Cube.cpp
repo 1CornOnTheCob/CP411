@@ -37,6 +37,7 @@ void Cube::draw()
 {
     glPushMatrix();
     this->ctmMultiply();
+    glScalef(s,s,s);
     glColor3f(r,g,b);
     for (int i = 0; i<6;i++){
         drawFace(i);

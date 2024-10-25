@@ -11,6 +11,7 @@ Camera::Camera(){
 	viewup.set(0, 0, 1);
 	aspect = 1.0, vangle = 40.0, dnear = 1.0, dfar = 15.0;
 	setViewNorm();
+
 }
 
 void Camera::reset(void) { // make default camera
@@ -25,7 +26,10 @@ void Camera::set(Point Eye, Point Look, Vector Up) {
 	eye.set(Eye);
 	ref.set(Look);
 	viewup.set(Up);
-	aspect = 1.0, vangle = 40.0, dnear = 1.0, dfar = 15.0;
+	aspect = 1.0;
+	vangle = 40.0;
+	dnear = 1.0;
+	dfar = 15.0;
 	setViewNorm();
 }
 
@@ -70,4 +74,24 @@ void Camera::setProjectionMatrix() {
 	glLoadIdentity();
 	gluLookAt(eye.x, eye.y, eye.z, ref.x, ref.y, ref.z, viewup.x,viewup.y,viewup.z);
 }
+void Camera::set(float ex, float ey, float ez, float lx, float ly, float lz, float upx, float upy, float upz) {
+	eye.set(ex, ey, ez);
+	ref.set(lx, ly, lz);
+	viewup.set(upx, upy, upz);
+	aspect = 1.0;
+	vangle = 40.0;
+	dnear = 1.0;
+	dfar = 15.0;
+	setViewNorm();
+}
+void Camera::setViewVolume(float viewAngle, float aspect, float Near, float Far) {
+	vangle = viewAngle;
+	this->aspect = aspect;
+	dnear = Near;
+	dfar = Far;
+}
+void Camera::setAspect(float aspect) {
+	this->aspect = aspect;
+}
+
 
